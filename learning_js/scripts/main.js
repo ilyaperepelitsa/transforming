@@ -31,3 +31,22 @@ myimage.onclick = function(){
 		myimage.setAttribute('src', 'images/cow1.jpg');
 	}
 }
+
+
+var myButton = document.querySelector("button");
+var myHeading = document.querySelector("h1");
+
+function setUserName () {
+	var myName = prompt("Please enter your name");
+	localStorage.setItem("name", myName);
+	myHeading.textContent ="mozilla blah blah blah" + myName;
+}
+
+
+if(!localStorage.getItem("name")) {
+	setUserName();
+} else {
+	var storedName = localStorage.getItem("name");
+	myHeading.textContent = "Mozilla is cool, " + storedName;
+}	
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<style> 
+		#question {
+			color: red;
+		}
+		#answer {
+			color: blue;
+		}
+		</style>
+
+		<script> 
+			var myQuestion = "How long does JS take to learn"; 
+			var myQuestion1 = "Pew?"; 
+			var myNumber = 10;
+			var myTrueFalse = true;
+			var myArray = [false, "hello", 123];
+		</script>
+
+	</head>
+
+
+
+	<body>
+		<div id = "question">Do I work?</div>
+		<div id = "answer">Yes I do</div>
+
+
+		<script> 
+			document.getElementById("question").innerHTML = myQuestion; 
+			if (myNumber === 7) {
+				document.getElementById("question").innerHTML = myQuestion; 
+			}	else {
+				document.getElementById("question").innerHTML = myQuestion1; 
+			}		
+		</script>
+	</body>
+
+
+</html>
