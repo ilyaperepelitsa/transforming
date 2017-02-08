@@ -39,9 +39,9 @@
 			var dataIn = Number(document.getElementById("yourAnswer").value);
 			//The lines below are the ones to modify.
 			var addNumber = dataIn + 10; //This one I already did for you as an example of a working line
-			var subtractNumber = 0; // Modify this line (erase the 0) (subtract dataIn variable from the number 10)
-			var multiplyNumber = 0; // Multiply the input number by 10
-			var divideNumber = 0; // divide the number you entered by 10
+			var subtractNumber = 10 - dataIn; // Modify this line (erase the 0) (subtract dataIn variable from the number 10)
+			var multiplyNumber = dataIn * 10; // Multiply the input number by 10
+			var divideNumber = dataIn / 10; // divide the number you entered by 10
 			var numberIsOdd = false; //test whether the number is odd or even -- this is a little tricker...
 			//do NOT modify the line immediately above this!! 
 			//leave numberIsOdd equal to false
@@ -52,9 +52,27 @@
 			
 			
 			
+			// I decided to write the switch function after I wrote the if-else one
+			// I just never used swtitches and thought it could be nice to practice a bit
+
+			switch (dataIn % 2 ) {
+				case 0:
+				numberIsOdd = false;
+				break;
+
+				default:
+				numberIsOdd = true;
+			}
+
+
+			// if (dataIn % 2 != 0){
+			// 	numberIsOdd = true;
+			// } else if (dataIn % 2 == 0){
+			// 	numberIsOdd = false;
+			// }
 			
-			//!!!!!!!!!!!Write the if/else statement in this space!!!!!!!!!!
-			
+
+
 			
 			
 			

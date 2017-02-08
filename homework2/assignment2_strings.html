@@ -40,10 +40,10 @@
 			//The lines below are the ones to modify.
 			var stringLength = dataIn.length; //This one I already did for you as an example of a working line
 			//for the variables below, erase the 0 and write in the proper expression
-			var upperCase = 0; //use the toUpperCase() method to change dataIn to all uppercase
-			var sixToTenthChars = 0; // use the slice() method get the characters from the 6th to 10th position
-			var firstFiveChars = 0; // use substr() to get the first five letters
-			var lastFiveChars = 0; // use substr() to get the last five letters, NOTE: you will need to use the length to get this vaule.
+			var upperCase = dataIn.toUpperCase(); //use the toUpperCase() method to change dataIn to all uppercase
+			var sixToTenthChars = dataIn.slice(5, 9); // use the slice() method get the characters from the 6th to 10th position
+			var firstFiveChars = dataIn.substr(0, 5); // use substr() to get the first five letters
+			var lastFiveChars = dataIn.substr(-5); // use substr() to get the last five letters, NOTE: you will need to use the length to get this vaule.
 			var largeString = false; //test whether the string that was entered is large, say, more than 30 character long.
 			//do NOT modify the line immediately above this!! 
 			//leave largeString equal to false 
@@ -51,7 +51,14 @@
 			//Look at comparison operators to see how greater than /less than signs work
 			//if the length of the string is greater 30, set largeString is true, else set it to false.
 			//Write the if/else statement directly below:
-			
+
+			if (dataIn.length > 30){
+				largeString = true;
+			} else if (dataIn.length < 30){
+				largeString = false;
+			}
+
+
 			
 			
 			
@@ -76,7 +83,27 @@
 
 
 
-			//PASTE THE dataOut += strings here.....then modify them per the instructions above
+			dataOut += "The length of your sentence is " + stringLength + " characters.\n<BR>";
+			dataOut += "Your sentence in all capital letters looks like this : \"" + upperCase + "\". \n<BR>";
+			dataOut += "Here are characters 6 - 10 of your sentence : \"" + sixToTenthChars + "\".\n<BR>";
+			dataOut += "First five characters of your sentence are : \"" + firstFiveChars + "\".\n<BR>";
+			dataOut += "Last five characters of your sentence are : \"" + lastFiveChars + "\".\n<BR>";
+			if (largeString){
+				dataOut += "Your string is longer than 30 characters." + "\n<BR>";
+			} else {
+				dataOut += "Your string is shorter than 30 characters." + "\n<BR>";
+			}
+			
+		
+
+			//here we check the numberIsOdd to see if it is true, and then add the proper results to the dataOut string.
+
+			// if(numberIsOdd == true) {
+			// 		dataOut += dataIn + " is an odd number" + "\n<BR>";
+			// } else {
+			// 		dataOut += dataIn + " is an even number" + "\n<BR>";
+		
+			// }
 
 
 

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Array Operations</title>
+		<style>
+		#question {
+			color: black;
+			width: 300px;
+			height: 70px;
+		}
+		#answer {
+			color: black;
+			width: 300px;
+			height: 300px;
+			border-style: solid;
+		    border-color: red;
+    		padding: 10px;
+		}
+		</style>
+	</head>
+
+	<body>
+		<div id="question">
+		Please enter some words separated by spaces: <input type="text" id="yourAnswer" size=50 value="">
+		<button id="btnSearch" onclick="processArray()">Click me for results</button><BR>
+		</div>
+		<div id="answer">
+		The results will appear here!!
+		</div>
+		<script>
+		//THIS FUNCTION IS SET UP WITH EVERYTHING YOU NEED
+		//MAKE YOUR EDITS LINE-BY-LINE BUT DON'T CHANGE THE NAME OF THE FUNCTION
+		//AND KEEP ALL OF THE CODE INSIDE THE { } THAT WRAP THE FUNCTION "processArray()"
+		function processArray() {
+			//THIS IS YOUR DATA-IN VARIABLE IS TAKES WHATEVER YOU ENTERED AN ATTACHES IT TO THE VARIBLE "dataIn"
+			var dataIn = document.getElementById("yourAnswer").value;
+			//the line below splits dataIn by spaces into an array -- so each word will be one element in the array
+			var myArray = dataIn.split(" ")
+			//The lines below are the ones to modify. Erase the 0 and write the proper expression on the right side of the equation.
+			var arrayLength = myArray.length; //This one I already did for you as an example of a working line
+			var firstWord = myArray[0]; // Modify this so you get the first element of the array
+			var lastWord = myArray[myArray.length-1]; // Modify this so you get the last element of the array
+			var middlishWord = 0; // Modify this so you get the middle element of the array (you will need to round off the result, try googling how to do that)
+			
+			// if (myArray.length % 2 == 0){
+			// 	middlishWord = 1
+			// }
+
+			if (myArray.length % 2 == 0){
+				var middlishWord = [myArray[myArray.length/2 - 1], myArray[myArray.length/2]]
+			} else {
+				var middlishWord = [myArray[Math.floor(myArray.length/2)]]
+			}
+			
+			
+			
+			//THE REST OF THIS CODE PRINTS-OUT THE RESULTS
+			//YOU SHOULD NOT MODIFY ANYTHING BELOW
+			//THIS HAS BEEN EDITS FROM THE NUMBERS PAGE, BUT THERE IS NO IF/ELSE STATEMENT...
+			//note: I declare the variable dataOut, as an empty string ""
+			var dataOut = ""
+			//then I keep adding strings to it. the "+=" CONCATENATE:
+			//this means it adds more to the end of the string without erasing what is already contained in the variable
+			//after all of the lines below are run, dataOut will be a string with 4 separate lines.
+			//also note how the strings are built, and the variables are added to the strings
+			// that final part of the string "\n<BR>" just makes a line break after each line of text
+			dataOut += "You entered " + arrayLength + " words!\n<BR>";
+			dataOut += "The first word is: \"" + firstWord+ "\"\n<BR>";
+			dataOut += "The last word is: \"" + lastWord+ "\"\n<BR>";
+
+			// You wanted something without if statements, here's it
+
+			switch (middlishWord.length ) {
+				case 2:
+				dataOut += "Your list had an even number of elements \
+				so the two words in the middle are : \"" + 
+				middlishWord[0] + "\" and \"" + 
+				middlishWord[1] + "\"\n<BR>";
+				break;
+
+				default:
+				dataOut += "The middle word is: \"" + middlishWord[0] + "\"\n<BR>";
+			}
+
+			// and a version with some - feel free to uncomment it too
+
+			// if (middlishWord.length == 1){
+			// } else {
+			// 	dataOut += "Your list had an even number of elements \
+			// 	so the two words in the middle are : \"" + 
+			// 	middlishWord[0] + "\" and \"" + 
+			// 	middlishWord[1] + "\"\n<BR>";
+			// }
+
+
+			// dataOut += "The middle word is: " + middlishWord + "\n<BR>";
+
+			//no if/else statements here. YAY!
+			//dataOut now has all the information add to it, so we display that info in the "answer" DIV
+			document.getElementById("answer").innerHTML = dataOut;
+		}
+		</script>
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
