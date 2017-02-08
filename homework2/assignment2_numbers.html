@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Number Operations</title>
+		<style>
+		#question {
+			color: black;
+			width: 300px;
+			height: 70px;
+		}
+		#answer {
+			color: black;
+			width: 300px;
+			height: 300px;
+			border-style: solid;
+		    border-color: red;
+    		padding: 10px;
+		}
+		</style>
+	</head>
+
+	<body>
+		<div id="question">
+		Please enter a number:  <input type="text" id="yourAnswer" size=50 value="">
+		<button id="btnSearch" onclick="processNumber()">Click me for results</button><BR>
+		</div>
+		<div id="answer">
+		The results will appear here!!
+		</div>
+		<script>
+		//THIS FUNCTION IS SET UP WITH EVERYTHING YOU NEED
+		//MAKE YOUR EDITS LINE-BY-LINE BUT DON'T CHANGE THE NAME OF THE FUNCTION
+		//AND KEEP ALL OF THE CODE INSIDE THE { } THAT WRAP THE FUNCTION "processNumber()"
+		function processNumber() {
+			//BELOW IS YOUR DATA-IN VARIABLE IS TAKES WHATEVER YOU ENTERED AN ATTACHES IT TO THE VARIBLE "dataIn"
+			//Note: I had to change the value with a built-in javascript Number() function -- inputs default to strings so if I didn't change it to a number "1" + 11 would equal 111.	
+			//If that note was confusing, don't worry about, just don't modify this line!!		
+			var dataIn = Number(document.getElementById("yourAnswer").value);
+			//The lines below are the ones to modify.
+			var addNumber = dataIn + 10; //This one I already did for you as an example of a working line
+			var subtractNumber = 0; // Modify this line (erase the 0) (subtract dataIn variable from the number 10)
+			var multiplyNumber = 0; // Multiply the input number by 10
+			var divideNumber = 0; // divide the number you entered by 10
+			var numberIsOdd = false; //test whether the number is odd or even -- this is a little tricker...
+			//do NOT modify the line immediately above this!! 
+			//leave numberIsOdd equal to false
+			//Below these comments write an if/else statement that uses the modulus to test is the number is odd or even
+			//look up how modulus works (it gives you a remainder from division, what would you divide a number by to test if it's even?
+			//in your if-statement -- if the test gives you a remainder, set numberIsOdd = true, else set numberIsOdd = false.
+			//Look at the if/else statement below for an example of syntax...
+			
+			
+			
+			
+			//!!!!!!!!!!!Write the if/else statement in this space!!!!!!!!!!
+			
+			
+			
+			
+			//THE REST OF THIS CODE PRINTS-OUT THE RESULTS
+			//YOU SHOULD NOT MODIFY ANYTHING BELOW
+			//BUT DO TAKE A CLOSE LOOK, BECAUSE YOU WILL NEED TO USE/EDIT THIS CODE FOR THE NEXT PART OF THIS ASSIGNMENT
+			//note: I declare the variable dataOut, as an empty string ""
+			var dataOut = ""
+			//then I keep adding strings to it. the "+=" CONCATENATE:
+			//this means it adds more to the end of the string without erasing what is already contained in the variable
+			//after all of the lines below are run, dataOut will be a string with 5 separate lines.
+			//also note how the strings are built, the variables are added to the strings
+			// that final part of the string "\n<BR>" just makes a line break after each line of text
+			dataOut += dataIn + " added to 10 is: " + addNumber + "\n<BR>";
+			dataOut += dataIn + " subtracted from 10 is: " + subtractNumber+ "\n<BR>";
+			dataOut += dataIn + " times 10 is: " + multiplyNumber+ "\n<BR>";
+			dataOut += dataIn + " divided by 10 is: " + divideNumber+ "\n<BR>";
+			//here we check the numberIsOdd to see if it is true, and then add the proper results to the dataOut string.
+			if(numberIsOdd == true) {
+					dataOut += dataIn + " is an odd number" + "\n<BR>";
+			} else {
+					dataOut += dataIn + " is an even number" + "\n<BR>";
+		
+			}
+			//dataOut now has all the information add to it, so we display that info in the "answer" DIV
+			document.getElementById("answer").innerHTML = dataOut;
+		}
+		</script>
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+

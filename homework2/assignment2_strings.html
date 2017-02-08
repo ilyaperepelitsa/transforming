@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>String Operations</title>
+		<style>
+		#question {
+			color: black;
+			width: 300px;
+			height: 70px;
+		}
+		#answer {
+			color: black;
+			width: 300px;
+			height: 300px;
+			border-style: solid;
+		    border-color: red;
+    		padding: 10px;
+		}
+		</style>
+	</head>
+
+	<body>
+		<div id="question">
+		Please enter a nice sentence:  <input type="text" id="yourAnswer" size=50 value="">
+		<button id="btnSearch" onclick="processString()">Click me for results</button><BR>
+		</div>
+		<div id="answer">
+		The results will appear here!!
+		</div>
+		<script>
+		//IF YOU JUST STARTED THIS PAGE -- REMEMBER GET THE OUTPUT STRING BUILT FIRST!!! GO TO LINE 58
+		
+		//THIS FUNCTION IS SET UP WITH EVERYTHING YOU NEED
+		//MAKE YOUR EDITS LINE-BY-LINE BUT DON'T CHANGE THE NAME OF THE FUNCTION
+		//AND KEEP ALL OF THE CODE INSIDE THE { } THAT WRAP THE FUNCTION "processString()"
+		function processString() {
+			//THIS IS YOUR DATA-IN VARIABLE IS TAKES WHATEVER YOU ENTERED AN ATTACHES IT TO THE VARIBLE "dataIn"
+			var dataIn = document.getElementById("yourAnswer").value;
+			//The lines below are the ones to modify.
+			var stringLength = dataIn.length; //This one I already did for you as an example of a working line
+			//for the variables below, erase the 0 and write in the proper expression
+			var upperCase = 0; //use the toUpperCase() method to change dataIn to all uppercase
+			var sixToTenthChars = 0; // use the slice() method get the characters from the 6th to 10th position
+			var firstFiveChars = 0; // use substr() to get the first five letters
+			var lastFiveChars = 0; // use substr() to get the last five letters, NOTE: you will need to use the length to get this vaule.
+			var largeString = false; //test whether the string that was entered is large, say, more than 30 character long.
+			//do NOT modify the line immediately above this!! 
+			//leave largeString equal to false 
+			//Below these comments write an if/else statement that tests whether the length of the dataIn string is largeR than 30
+			//Look at comparison operators to see how greater than /less than signs work
+			//if the length of the string is greater 30, set largeString is true, else set it to false.
+			//Write the if/else statement directly below:
+			
+			
+			
+			
+			//!!!!!!!!!!MODIFY BELOW FIRST!!!!!!!!!!!!!!!!!!
+			//HERE IS WHERE YOU NEED TO CONSTRUCT THE DATA OUT STRING.
+			//RIGHT NOW YOU JUST HAVE THE VARIABLE DECLARED AS AN EMPTY STRING
+			var dataOut = ""
+			//copy all of the lines  from assignment2_strings.html from just under "var dataOut = ""'
+			//to just above "document.getElementById..."
+			//modify the dataOut += strings so they have the proper descriptions of the results and the proper variables
+			//for example 
+				//the first line: dataOut += dataIn + " added to 10 is: " + addNumber + "\n<BR>";
+				//should be changed to: dataOut += "The length of your string is: " + stringLength + "\n<BR>";
+				//note that I got rid of the dataIn + (because that would just reprint your string over and over.)
+				//be sure to take dataIn + out of all of those lines.
+				//The next line you modify should say "Your text in uppercase is: " and then the proper variable
+				//make sure there is a separate line for the first five variables. (stringLength to lastFiveChars)
+				//then modify the if/else statement to test whether largeString is true or false. 
+						//if true, have it write "The line is long." if false, have it write "The line is short."
+			
+					
+
+
+
+			//PASTE THE dataOut += strings here.....then modify them per the instructions above
+
+
+
+
+			//dataOut now has all the information add to it, show we display that info in the "answer" DIV
+			document.getElementById("answer").innerHTML = dataOut;
+		}
+		</script>
+
+	</body>
+
+</html>
+
+
+
+
+
+
+
+
