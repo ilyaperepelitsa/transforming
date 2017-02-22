@@ -41,9 +41,13 @@
 			var stringLength = dataIn.length; //This one I already did for you as an example of a working line
 			//for the variables below, erase the 0 and write in the proper expression
 			var upperCase = dataIn.toUpperCase(); //use the toUpperCase() method to change dataIn to all uppercase
-			var sixToTenthChars = dataIn.slice(5, 9); // use the slice() method get the characters from the 6th to 10th position
+			var sixToTenthChars = dataIn.slice(5, 10); // use the slice() method get the characters from the 6th to 10th position
+			// Sorry ^ You said position so I assumed it's 6th and 10th characters respectively rather that index 6 and 10
+			// Since the upper is non-inclusive, it's the index pait 5, 10 that we're looking for
+
+
 			var firstFiveChars = dataIn.substr(0, 5); // use substr() to get the first five letters
-			var lastFiveChars = dataIn.substr(-5); // use substr() to get the last five letters, NOTE: you will need to use the length to get this vaule.
+			var lastFiveChars = dataIn.substr(-5, 5); // use substr() to get the last five letters, NOTE: you will need to use the length to get this vaule.
 			var largeString = false; //test whether the string that was entered is large, say, more than 30 character long.
 			//do NOT modify the line immediately above this!! 
 			//leave largeString equal to false 
@@ -94,18 +98,7 @@
 				dataOut += "Your string is shorter than 30 characters." + "\n<BR>";
 			}
 			
-		
-
-			//here we check the numberIsOdd to see if it is true, and then add the proper results to the dataOut string.
-
-			// if(numberIsOdd == true) {
-			// 		dataOut += dataIn + " is an odd number" + "\n<BR>";
-			// } else {
-			// 		dataOut += dataIn + " is an even number" + "\n<BR>";
-		
-			// }
-
-
+	
 
 
 			//dataOut now has all the information add to it, show we display that info in the "answer" DIV
