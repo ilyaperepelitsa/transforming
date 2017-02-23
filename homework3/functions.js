@@ -217,9 +217,40 @@ printRight(resultsArray);
 }
 
 
+function lastWord() {
+var resultsArray = [];
+for (var i = 0; i < alltexts.length; i++) {
+	var mytext = alltexts[i];
+	var lineArray = mytext.split("\n");
+	for (var j=0; j < lineArray.length;j++) {
+		var wordsArray = lineArray[j].split(" ");
+		resultsArray.push(wordsArray[wordsArray.length - 1]);
+	}
+}
+printRight(resultsArray);
+}
 
 
+//
+function randomLine() {
+var resultsArray = [];
+for (var i = 0; i < alltexts.length; i++) {
+	var mytext = alltexts[i];
+	var lineArray = mytext.split(RegExp("\\n{1,2}", "i"));
+	var some_entry = [];
+	some_entry.push("<b>" + textTitles[i]) + "</b>";
+	var lyrics = lineArray[Math.floor((Math.random() * lineArray.length))];
+	if ((lyrics != "") || (lyrics != " ")){
+		some_entry.push(lyrics);
+	} else {
+		lyrics = lineArray[Math.floor((Math.random() * lineArray.length))];
+		some_entry.push(lyrics);
+	}
 
+	resultsArray.push(some_entry);
+	}
+printRight(resultsArray);
+}
 
 
 
