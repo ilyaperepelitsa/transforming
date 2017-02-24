@@ -236,29 +236,177 @@ function randomLine() {
 var resultsArray = [];
 for (var i = 0; i < alltexts.length; i++) {
 	var mytext = alltexts[i];
-	var lineArray = mytext.split(RegExp("\\n{1,2}", "i"));
+	var lineArray = mytext.split(RegExp("\\n{1,3}", "i"));
 	var some_entry = [];
-	some_entry.push("<b>" + textTitles[i]) + "</b>";
+	some_entry.push("\<b\>" + textTitles[i] + "\<\/b\> : ");
 	var lyrics = lineArray[Math.floor((Math.random() * lineArray.length))];
-	if ((lyrics != "") || (lyrics != " ")){
-		some_entry.push(lyrics);
+	if (lyrics != ""){
+		some_entry += String(lyrics);
 	} else {
 		lyrics = lineArray[Math.floor((Math.random() * lineArray.length))];
-		some_entry.push(lyrics);
+		some_entry += String(lyrics);
 	}
 
 	resultsArray.push(some_entry);
 	}
+
 printRight(resultsArray);
+
 }
 
 
+function randomReverse() {
+	var resultsArray = [];
+	var index = Math.floor((Math.random() * alltexts.length));
+	var lineArray = alltexts[index].split(RegExp("\\n{1,3}", "i"));
+	var some_entry = [];
+	some_entry.push("\<b\>" + textTitles[index] + "\<\/b\> : ");
+	var lyrics = lineArray[Math.floor((Math.random() * lineArray.length))];
+	if (lyrics != ""){
+		some_entry += String(lyrics);
+	} else {
+		lyrics = lineArray[Math.floor((Math.random() * lineArray.length))];
+		some_entry += String(lyrics);
+	}
+	resultsArray.push(some_entry);
+	var hub_line = lyrics.split(RegExp("\\W", "i"));
+	var reversed_line = [];
+	var reversed_entry = "\<b\>" + textTitles[index] + "\<\/b\> : ";
+	loop_length = hub_line.length;
+	for (i = 0; i < loop_length; i++){
+		var popped = hub_line.pop();
+		reversed_entry += popped + " ";
+	}
+	resultsArray.push(reversed_entry);
+	printRight(resultsArray);
+
+}
+
+function randomLongWord() {
+	var resultsArray = [];
+	var index = Math.floor((Math.random() * alltexts.length));
+	var lineArray = alltexts[index].split(RegExp("\\n{1,3}", "i"));
+	var some_entry = [];
+	some_entry.push("\<b\>" + textTitles[index] + "\<\/b\> : ");
+	var lyrics = lineArray[Math.floor((Math.random() * lineArray.length))];
+	if (lyrics != ""){
+		some_entry += String(lyrics);
+	} else {
+		lyrics = lineArray[Math.floor((Math.random() * lineArray.length))];
+		some_entry += String(lyrics);
+	}
+	resultsArray.push(some_entry);
+
+	var hub_line = lyrics.split(RegExp("\\W", "i"));
+
+	var pair_list = [];
+	// var reversed_entry = "\<b\>" + textTitles[index] + "\<\/b\> : ";
+	console.log(hub_line.length);
+	console.log(hub_line);
+	for (count_longest = 0; count_longest < hub_line.length; count_longest += 1){
+		var pair = [];
+		pair.push(hub_line[count_longest]);
+		pair.push(hub_line[count_longest].length);
+		pair_list.push(pair);
+		// console.log(pair_list);
+		// reversed_entry += popped + " ";
+	}
+
+	pair_list = pair_list.sort(compareSecondColumn);
+
+	for(i = 0; i < pair_list.length; i++){
+		resultsArray.push("\<b\>" + pair_list[i][0] + "\<\/b\> : " + pair_list[i][1]);
+	}
+
+	printRight(resultsArray);
+
+}
 
 
+function longestText() {
+	var resultsArray = [];
+	var all_results = [];
+	for (var i = 0; i < alltexts.length; i++) {
+		// console.log(some_entry);
+		var mytext = alltexts[i];
+		var lineArray = mytext.split(RegExp("\\n{1,3}", "i"));
+		var some_entry = [];
+		some_entry.push("\<b\>" + textTitles[i] + "\<\/b\> ");
+
+		// console.log(some_entry);
+		var lyrics = [];
+		for (n = 0; n < lineArray.length; n++){
+
+			if (lineArray[n] != ""){
+				lyrics += String(lineArray[n]);
+			} else {
+				continue;
+			}
+
+		}
+
+		some_entry.push(lyrics.length);
+
+		all_results.push(some_entry);
+
+		}
+
+	all_results = all_results.sort(compareSecondColumn);
+	// console.log(all_results);
+
+	for(i = 0; i < all_results.length; i++){
+		resultsArray.push("\<b\>" + all_results[i][0] + "\<\/b\> : " + all_results[i][1]);
+	}
 
 
+	printRight(resultsArray);
+}
 
 
+function averageLineLength() {
+	var resultsArray = [];
+	var all_results = [];
+
+	for (var i = 0; i < alltexts.length; i++) {
+
+		var total_letters = 0;
+		// console.log(some_entry);
+		var mytext = alltexts[i];
+		var lineArray = mytext.split(RegExp("\\n{1,3}", "i"));
+		var total_lines = lineArray.length;
+		var some_entry = [];
+		some_entry.push("\<b\>" + textTitles[i] + "\<\/b\> ");
+
+		// console.log(some_entry);
+		var lyrics = [];
+		for (n = 0; n < lineArray.length; n++){
+
+
+			if (lineArray[n] != ""){
+				lyrics += String(lineArray[n]);
+				total_letters += (lineArray[n]).length;
+			} else {
+				continue;
+			}
+
+		}
+
+		some_entry.push(total_letters/total_lines);
+
+		all_results.push(some_entry);
+
+		}
+
+	all_results = all_results.sort(compareSecondColumn);
+	// console.log(all_results);
+
+	for(i = 0; i < all_results.length; i++){
+		resultsArray.push("\<b\>" + all_results[i][0] + "\<\/b\> : " + all_results[i][1]);
+	}
+
+
+	printRight(resultsArray);
+}
 
 
 
